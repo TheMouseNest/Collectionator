@@ -1,4 +1,4 @@
-## Interface: 110200, 110107, 50500
+## Interface: 110200, 50500, 50501
 ## Title: Collectionator
 ## Version: @project-version@
 ## Author: plusmouse

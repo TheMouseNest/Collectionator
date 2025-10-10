@@ -46,10 +46,16 @@ function CollectionatorSummaryTMogScannerFrameMixin:GetItem(index, itemKeyInfo, 
       weaponType = itemInfo[13]
     end
 
+    local expansion = 0
+    if itemInfo[15] then
+        expansion = itemInfo[15]
+    end
+
+
     local replacementItemLink = select(6, C_TransmogCollection.GetAppearanceSourceInfo(source))
 
     return {
-      id = source, visual = visual, index = index, set = set,
+      id = source, visual = visual, index = index, set = set, expansion = expansion,
       armor = armorType, weapon = weaponType, slot = inventorySlot,
       levelRequired = C_AuctionHouse.GetItemKeyRequiredLevel(scanInfo.itemKey) or 0,
       itemID = scanInfo.itemKey.itemID,

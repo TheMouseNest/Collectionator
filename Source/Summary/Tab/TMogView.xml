@@ -39,7 +39,7 @@
       </DropDownToggleButton>
       <DropDownToggleButton parentKey="ExpFilter" inherits="CollectionatorFilterDropDownTemplate" mixin="CollectionatorExpansionFilterMixin" text="COLLECTIONATOR_L_EXPANSION">
         <Anchors>
-          <Anchor point="TOPLEFT" relativePoint="$parent.SlotFilter" x="25"/>
+          <Anchor point="TOPLEFT" relativeKey="$parent.SlotFilter" relativePoint="TOPRIGHT" x="25"/>
         </Anchors>
       </DropDownToggleButton>
       <Frame parentKey="LevelFilter" inherits="AuctionatorConfigurationMinMaxFrame">

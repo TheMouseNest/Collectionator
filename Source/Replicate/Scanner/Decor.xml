@@ -1,0 +1,7 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/">
+  <Frame name="CollectionatorReplicateDecorScannerFrameTemplate" virtual="true" mixin="CollectionatorReplicateDecorScannerFrameMixin">
+    <Scripts>
+      <OnLoad method="OnLoad"/>
+    </Scripts>
+  </Frame>
+</Ui>

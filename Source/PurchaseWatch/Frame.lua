@@ -69,14 +69,15 @@ function CollectionatorPurchaseWatchFrameMixin:ReceiveEvent(eventName, ...)
 end
 
 function CollectionatorPurchaseWatchFrameMixin:ResetData()
-  COLLECTIONATOR_PURCHASES = {
-    TMog = {},
-    Pets = {},
-    Toys = {},
-    Mounts = {},
-    Recipes = {},
-    Version = PURCHASE_WATCH_VERSION,
-  }
+      COLLECTIONATOR_PURCHASES = {
+        TMog = {},
+        Pets = {},
+        Toys = {},
+        Mounts = {},
+        Decor = {},
+        Recipes = {},
+        Version = PURCHASE_WATCH_VERSION,
+      }
   Collectionator.State.Purchases = COLLECTIONATOR_PURCHASES
 end
 
@@ -108,6 +109,8 @@ function CollectionatorPurchaseWatchFrameMixin:HideItem(itemLink)
         self:ProcessToyDetails(itemID)
       elseif classID == Enum.ItemClass.Miscellaneous and subClassID == Enum.ItemMiscellaneousSubclass.Mount then
         self:ProcessMountDetails(itemID)
+      elseif C_HousingCatalog and C_HousingCatalog.GetCatalogEntryInfoByItem(itemID, false) then
+        self:ProcessDecorDetails(itemID)
       elseif classID == Enum.ItemClass.Recipe then
         self:ProcessRecipeDetails(itemID)
       end
@@ -159,6 +162,12 @@ function CollectionatorPurchaseWatchFrameMixin:ProcessMountDetails(itemID)
   Collectionator.State.Purchases.Mounts[mountID] = true
 
   Auctionator.EventBus:Fire(self, Collectionator.Events.MountPurchased)
+end
+
+function CollectionatorPurchaseWatchFrameMixin:ProcessDecorDetails(itemID)
+  Collectionator.State.Purchases.Decor[itemID] = true
+
+  Auctionator.EventBus:Fire(self, Collectionator.Events.DecorPurchased)
 end
 
 function CollectionatorPurchaseWatchFrameMixin:ProcessRecipeDetails(itemID)

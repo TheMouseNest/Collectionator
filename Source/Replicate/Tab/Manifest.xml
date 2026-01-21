@@ -13,6 +13,7 @@
   <Include file="TMogView.xml"/>
   <Include file="PetView.xml"/>
   <Include file="ToyView.xml"/>
+  <Include file="DecorView.xml"/>
   <Include file="MountView.xml"/>
   <Include file="RecipeView.xml"/>
   <Include file="BuyoutDropDown.xml"/>

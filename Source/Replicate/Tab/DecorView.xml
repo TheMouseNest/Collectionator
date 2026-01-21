@@ -1,0 +1,35 @@
+<Ui>
+  <Frame
+    name="CollectionatorReplicateDecorViewTemplate"
+    inherits="CollectionatorReplicateViewTemplate"
+    virtual="true"
+  >
+    <KeyValues>
+      <KeyValue key="queryType" value="OTHER" type="string"/>
+    </KeyValues>
+
+    <Frames>
+
+      <Frame inherits="CollectionatorReplicateDecorScannerFrameTemplate" parentKey="Scanner">
+      </Frame>
+
+      <Frame inherits="AuctionatorConfigurationCheckbox" parentKey="IncludeCollected">
+        <KeyValues>
+          <KeyValue key="labelText" value="COLLECTIONATOR_L_DECOR_INCLUDE_COLLECTED" type="global" />
+        </KeyValues>
+        <Anchors>
+          <Anchor point="TOPLEFT" relativeKey="$parent" relativePoint="TOPLEFT" y="90" x="270"/>
+          <Anchor point="RIGHT" relativeKey="$parent" relativePoint="LEFT" x="550"/>
+        </Anchors>
+      </Frame>
+
+      <Frame parentKey="DataProvider" mixin="CollectionatorReplicateDecorDataProviderMixin">
+        <Scripts>
+          <OnLoad method="OnLoad"/>
+          <OnShow method="OnShow"/>
+          <OnUpdate method="OnUpdate"/>
+        </Scripts>
+      </Frame>
+    </Frames>
+  </Frame>
+</Ui>

@@ -44,10 +44,19 @@
           <OnClick>self:GetParent():ToyMode()</OnClick>
         </Scripts>
       </Button>
-      <Button parentKey="MountButton" inherits="UIPanelDynamicResizeButtonTemplate" text="COLLECTIONATOR_L_MOUNTS_BUTTON">
+      <Button parentKey="DecorButton" inherits="UIPanelDynamicResizeButtonTemplate" text="COLLECTIONATOR_L_DECOR_BUTTON">
         <Size x="70" y="22"/>
         <Anchors>
           <Anchor point="TOPLEFT" relativePoint="TOPRIGHT" relativeKey="$parent.ToyButton"/>
+        </Anchors>
+        <Scripts>
+          <OnClick>self:GetParent():DecorMode()</OnClick>
+        </Scripts>
+      </Button>
+      <Button parentKey="MountButton" inherits="UIPanelDynamicResizeButtonTemplate" text="COLLECTIONATOR_L_MOUNTS_BUTTON">
+        <Size x="70" y="22"/>
+        <Anchors>
+          <Anchor point="TOPLEFT" relativePoint="TOPRIGHT" relativeKey="$parent.DecorButton"/>
         </Anchors>
         <Scripts>
           <OnClick>self:GetParent():MountMode()</OnClick>
@@ -68,6 +77,8 @@
       <Frame parentKey="PetView" inherits="CollectionatorSummaryPetViewTemplate"/>
 
       <Frame parentKey="ToyView" inherits="CollectionatorSummaryToyViewTemplate"/>
+
+      <Frame parentKey="DecorView" inherits="CollectionatorSummaryDecorViewTemplate"/>
 
       <Frame parentKey="MountView" inherits="CollectionatorSummaryMountViewTemplate"/>
 

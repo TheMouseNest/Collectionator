@@ -27,6 +27,13 @@ Collectionator.Events = {
   SummaryMountLoadStart = "collecting_summary_mounts_start",
   SummaryMountLoadEnd = "collecting_summary_mounts_end",
 
+  DecorLoadStart = "collecting_replicate_decor_start",
+  DecorLoadEnd = "collecting_replicate_decor_end",
+  DecorPurchased = "decor_purchased",
+
+  SummaryDecorLoadStart = "collecting_summary_decor_start",
+  SummaryDecorLoadEnd = "collecting_summary_decor_end",
+
   RecipeLoadStart = "collecting_replicate_recipes_start",
   RecipeLoadEnd = "collecting_replicate_recipes_end",
   RecipePurchased = "recipe_purchased",

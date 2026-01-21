@@ -13,6 +13,7 @@ function CollectionatorReplicateTabFrameMixin:HideViews()
   self.TMogView:Hide()
   self.PetView:Hide()
   self.ToyView:Hide()
+  self.DecorView:Hide()
   self.MountView:Hide()
   self.RecipeView:Hide()
 end
@@ -21,6 +22,7 @@ function CollectionatorReplicateTabFrameMixin:ActivateButtons()
   self.TMogButton:SetEnabled(not self.TMogView:IsShown())
   self.PetButton:SetEnabled(not self.PetView:IsShown())
   self.ToyButton:SetEnabled(not self.ToyView:IsShown())
+  self.DecorButton:SetEnabled(not self.DecorView:IsShown())
   self.MountButton:SetEnabled(not self.MountView:IsShown())
   self.RecipeButton:SetEnabled(not self.RecipeView:IsShown())
 end
@@ -40,6 +42,12 @@ end
 function CollectionatorReplicateTabFrameMixin:ToyMode()
   self:HideViews()
   self.ToyView:Show()
+  self:ActivateButtons()
+end
+
+function CollectionatorReplicateTabFrameMixin:DecorMode()
+  self:HideViews()
+  self.DecorView:Show()
   self:ActivateButtons()
 end
 

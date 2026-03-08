@@ -23,7 +23,7 @@ Collectionator.Constants = {
 
   BuyWarningFactor = 1.4,
 
-  MaxLevel = 80,
+  MaxLevel = 90,
 
   SlotMap = {
     INVTYPE_HEAD = 1,

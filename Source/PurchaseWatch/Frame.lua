@@ -30,6 +30,7 @@ function CollectionatorPurchaseWatchFrameMixin:OnEvent(event, ...)
       if not COLLECTIONATOR_PURCHASES or COLLECTIONATOR_PURCHASES.Version ~= PURCHASE_WATCH_VERSION then
         self:ResetData()
       else
+        COLLECTIONATOR_PURCHASES.Decor = COLLECTIONATOR_PURCHASES.Decor or {}
         Collectionator.State.Purchases = COLLECTIONATOR_PURCHASES
       end
 

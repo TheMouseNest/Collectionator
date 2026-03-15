@@ -178,6 +178,10 @@ function CollectionatorSummaryTMogDataProviderMixin:TMogFilterCheck(sourceInfo, 
 
   check = check and cachedFilters.slotFilter:GetValue(sourceInfo.slot)
 
+  check = check and cachedFilters.expFilter:GetValue(sourceInfo.expansion)
+
+
+
   if sourceInfo.armor ~= -1 then
     check = check and cachedFilters.armorFilter:GetValue(sourceInfo.armor)
   else
@@ -272,6 +276,7 @@ function CollectionatorSummaryTMogDataProviderMixin:Refresh()
     characterOnly = self:GetParent().CharacterOnly:GetChecked(),
     qualityFilter = self:GetParent().QualityFilter,
     slotFilter = self:GetParent().SlotFilter,
+    expFilter = self:GetParent().ExpFilter,
     armorFilter = self:GetParent().ArmorFilter,
     weaponFilter = self:GetParent().WeaponFilter,
   }

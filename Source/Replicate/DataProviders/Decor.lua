@@ -93,15 +93,12 @@ function CollectionatorReplicateDecorDataProviderMixin:Sort(fieldName, sortDirec
 end
 
 local function IsDecorCollected(itemID)
-  if not C_HousingCatalog then
+  local catalogInfo = C_HousingCatalog.GetCatalogEntryInfoByItem(itemID)
+  if not catalogInfo then
     return false
   end
-  local catalogInfo = C_HousingCatalog.GetCatalogEntryInfoByItem(itemID, true)
-  if not catalogInfo or not catalogInfo.entryID then
-    return false
-  end
-  local entrySubtype = catalogInfo.entryID.entrySubtype
-  return entrySubtype == 2 or entrySubtype == 3
+  local possessed = catalogInfo.totalNumPlaced + catalogInfo.remainingRedeemable + catalogInfo.totalNumStored
+  return possessed ~= 0
 end
 
 function CollectionatorReplicateDecorDataProviderMixin:Refresh()

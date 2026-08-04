@@ -135,10 +135,11 @@ local function GroupedByVisualID(array)
   local results = {}
 
   for _, info in ipairs(array) do
-    if results[info.visual] == nil then
-      results[info.visual] = {}
+    local key = info.visual .. "_" .. (info.armor or -1)
+    if results[key] == nil then
+      results[key] = {}
     end
-    table.insert(results[info.visual], info)
+    table.insert(results[key], info)
   end
 
   return results

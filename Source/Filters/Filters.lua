@@ -102,7 +102,7 @@ function CollectionatorArmorFilterMixin:GetFilters()
 end
 
 function CollectionatorArmorFilterMixin:GetFilterName(filter)
-  return GetItemSubClassInfo(4, filter)
+  return C_Item.GetItemSubClassInfo(4, filter)
 end
 
 CollectionatorWeaponFilterMixin = CreateFromMixins(CollectionatorFilterDropDownMixin)
@@ -114,7 +114,7 @@ function CollectionatorWeaponFilterMixin:GetFilters()
 end
 
 function CollectionatorWeaponFilterMixin:GetFilterName(filter)
-  return GetItemSubClassInfo(2, filter)
+  return C_Item.GetItemSubClassInfo(2, filter)
 end
 
 local SLOTS = {
@@ -191,5 +191,5 @@ function CollectionatorProfessionFilterMixin:GetFilters()
 end
 
 function CollectionatorProfessionFilterMixin:GetFilterName(filter)
-  return GetItemSubClassInfo(Enum.ItemClass.Recipe, filter)
+  return C_Item.GetItemSubClassInfo(Enum.ItemClass.Recipe, filter)
 end

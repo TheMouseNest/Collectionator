@@ -64,7 +64,7 @@ function CollectionatorReplicateScannerFrameMixin:GetItem(index, link)
 end
 
 local function GlobalFilterLink(link)
-  local classID, subClassID = select(6, GetItemInfoInstant(link))
+  local classID, subClassID = select(6, C_Item.GetItemInfoInstant(link))
   if classID == nil then
     return true
   end

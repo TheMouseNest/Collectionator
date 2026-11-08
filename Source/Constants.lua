@@ -25,6 +25,9 @@ Collectionator.Constants = {
 
   MaxLevel = 90,
 
+  IsRetail = WOW_PROJECT_ID == WOW_PROJECT_MAINLINE,
+  IsForever = WOW_PROJECT_ID == WOW_PROJECT_CAMELOT,
+
   SlotMap = {
     INVTYPE_HEAD = 1,
     INVTYPE_NECK = 2,

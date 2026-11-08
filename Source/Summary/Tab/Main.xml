@@ -35,7 +35,7 @@
           <OnClick>self:GetParent():PetMode()</OnClick>
         </Scripts>
       </Button>
-      <Button parentKey="ToyButton" inherits="UIPanelDynamicResizeButtonTemplate" text="COLLECTIONATOR_L_TOYS_BUTTON">
+      <Button parentKey="ToyButton" inherits="UIPanelDynamicResizeButtonTemplate" text="COLLECTIONATOR_L_TOYS_BUTTON" collapsesLayout="true">
         <Size x="70" y="22"/>
         <Anchors>
           <Anchor point="TOPLEFT" relativePoint="TOPRIGHT" relativeKey="$parent.PetButton"/>
@@ -44,7 +44,7 @@
           <OnClick>self:GetParent():ToyMode()</OnClick>
         </Scripts>
       </Button>
-      <Button parentKey="DecorButton" inherits="UIPanelDynamicResizeButtonTemplate" text="COLLECTIONATOR_L_DECOR_BUTTON">
+      <Button parentKey="DecorButton" inherits="UIPanelDynamicResizeButtonTemplate" text="COLLECTIONATOR_L_DECOR_BUTTON" collapsesLayout="true">
         <Size x="70" y="22"/>
         <Anchors>
           <Anchor point="TOPLEFT" relativePoint="TOPRIGHT" relativeKey="$parent.ToyButton"/>

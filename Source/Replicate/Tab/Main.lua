@@ -3,6 +3,13 @@ CollectionatorReplicateTabFrameMixin = {}
 function CollectionatorReplicateTabFrameMixin:OnLoad()
   Auctionator.Debug.Message("CollectionatorReplicateTabMixin:OnLoad()")
   self:HideViews()
+
+  if not Collectionator.Constants.IsRetail then
+    self.DecorButton:Hide()
+  end
+  if Collectionator.Constants.IsForever then
+    self.ToyButton:Hide()
+  end
 end
 
 function CollectionatorReplicateTabFrameMixin:OnShow()

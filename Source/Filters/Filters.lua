@@ -176,13 +176,18 @@ local PROFESSION_SUBCLASSES = {
   Enum.ItemRecipeSubclass.Blacksmithing,
   Enum.ItemRecipeSubclass.Alchemy,
   Enum.ItemRecipeSubclass.Enchanting,
-  Enum.ItemRecipeSubclass.Jewelcrafting,
-  Enum.ItemRecipeSubclass.Inscription,
   Enum.ItemRecipeSubclass.Cooking,
   Enum.ItemRecipeSubclass.Fishing,
   Enum.ItemRecipeSubclass.FirstAid,
   Enum.ItemRecipeSubclass.Book,
 }
+
+if Collectionator.Constants.IsRetail then
+  tAppendAll(PROFESSION_SUBCLASSES, {
+    Enum.ItemRecipeSubclass.Jewelcrafting,
+    Enum.ItemRecipeSubclass.Inscription,
+  })
+end
 
 CollectionatorProfessionFilterMixin = CreateFromMixins(CollectionatorFilterDropDownMixin)
 
